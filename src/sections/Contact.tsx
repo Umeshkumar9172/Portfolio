@@ -1,8 +1,9 @@
+import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { GlassCard } from '../components/GlassCard';
 import { FiMail, FiGithub, FiLinkedin, FiSend, FiTwitter, FiInstagram } from 'react-icons/fi';
 
-export const Contact: React.FC = () => {
+export const Contact: FC = () => {
   return (
     <section id="contact" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">

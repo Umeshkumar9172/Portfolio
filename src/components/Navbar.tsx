@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeToggle } from './ThemeToggle';
@@ -12,7 +13,7 @@ const navLinks = [
   { name: 'Contact', href: '#contact' },
 ];
 
-export const Navbar: React.FC = () => {
+export const Navbar: FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');

@@ -1,13 +1,14 @@
+import type { ReactNode, FC } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../utils/cn';
 
 interface GlassCardProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   tilt?: boolean;
 }
 
-export const GlassCard: React.FC<GlassCardProps> = ({ children, className, tilt = true }) => {
+export const GlassCard: FC<GlassCardProps> = ({ children, className, tilt = true }) => {
   return (
     <motion.div
       whileHover={tilt ? { scale: 1.02, rotateY: 5, rotateX: 5 } : { scale: 1.02 }}

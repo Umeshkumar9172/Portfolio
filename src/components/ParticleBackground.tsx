@@ -1,33 +1,43 @@
+import type { FC } from 'react';
 import { useCallback, useEffect, useState } from 'react';
-import Particles, { initParticlesEngine } from '@tsparticles/react';
+import Particles from '@tsparticles/react';
 import type { Engine } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
 import { useTheme } from '../context/ThemeContext';
 
-export const ParticleBackground: React.FC = () => {
+export const ParticleBackground: FC = () => {
   const { theme } = useTheme();
   const [init, setInit] = useState(false);
 
   useEffect(() => {
-    initParticlesEngine(async (engine: Engine) => {
+    (async () => {
+      await loadSlim(undefined as unknown as Engine);
+    })()
+      .then(() => setInit(true))
+      .catch(() => setInit(true));
+  }, []);
+
+  const particlesInit = useCallback(async (engine: Engine) => {
+    try {
       await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
+    } catch {
+      /* engine already loaded globally */
+    }
   }, []);
 
   const particlesLoaded = useCallback(async () => {
-    // console.log(container);
+    // particles loaded
   }, []);
 
-  if (!init) {
+  if (typeof window === 'undefined' || !init) {
     return null;
   }
 
   return (
     <Particles
       id="tsparticles"
-      particlesLoaded={particlesLoaded}
+      init={particlesInit as any}
+      particlesLoaded={particlesLoaded as any}
       options={{
         background: {
           color: {

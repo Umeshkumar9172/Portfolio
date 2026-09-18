@@ -1,6 +1,7 @@
+import type { FC } from 'react';
 import { FiGithub, FiLinkedin, FiTwitter, FiInstagram } from 'react-icons/fi';
 
-export const Footer: React.FC = () => {
+export const Footer: FC = () => {
   return (
     <footer className="py-8 px-6 text-center border-t border-white/5 transition-colors duration-300">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">

@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { GlassCard } from '../components/GlassCard';
 import { ExternalLink, Trophy, Flame, Code2 } from 'lucide-react';
@@ -49,7 +50,7 @@ const platforms: PlatformProps[] = [
   },
 ];
 
-const ContributionCard: React.FC<PlatformProps> = ({ name, solved, link, logo, color, badge, streak }) => {
+const ContributionCard: FC<PlatformProps> = ({ name, solved, link, logo, color, badge, streak }) => {
   return (
     <motion.div
       whileHover={{ y: -10 }}
@@ -113,7 +114,7 @@ const ContributionCard: React.FC<PlatformProps> = ({ name, solved, link, logo, c
   );
 };
 
-export const CodingContributions: React.FC = () => {
+export const CodingContributions: FC = () => {
   const totalSolved = platforms.reduce((acc, curr) => acc + curr.solved, 0);
 
   return (

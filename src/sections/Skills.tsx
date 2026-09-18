@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { GlassCard } from '../components/GlassCard';
 
@@ -28,7 +29,7 @@ const skillCategories = [
   },
 ];
 
-const SkillTag: React.FC<{ skill: string }> = ({ skill }) => (
+const SkillTag: FC<{ skill: string }> = ({ skill }) => (
   <motion.span
     whileHover={{ scale: 1.1, backgroundColor: 'rgba(6, 182, 212, 0.2)' }}
     className="px-3 py-1 rounded-full text-sm font-medium border border-cyan-500/30 text-cyan-400 glass transition-all duration-300 hover:shadow-[0_0_10px_rgba(6,182,212,0.3)]"
@@ -37,7 +38,7 @@ const SkillTag: React.FC<{ skill: string }> = ({ skill }) => (
   </motion.span>
 );
 
-export const Skills: React.FC = () => {
+export const Skills: FC = () => {
   return (
     <section id="skills" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">

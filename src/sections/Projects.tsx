@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { GlassCard } from '../components/GlassCard';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
@@ -46,7 +47,7 @@ const projects: Project[] = [
   },
 ];
 
-const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
+const ProjectCard: FC<{ project: Project; index: number }> = ({ project, index }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -106,7 +107,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
   );
 };
 
-export const Projects: React.FC = () => {
+export const Projects: FC = () => {
   return (
     <section id="projects" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">

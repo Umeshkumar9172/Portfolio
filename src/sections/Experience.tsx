@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { GlassCard } from '../components/GlassCard';
 
@@ -38,7 +39,7 @@ const educationData: TimelineItem[] = [
   },
 ];
 
-const TimelineCard: React.FC<{ item: TimelineItem; index: number }> = ({ item, index }) => {
+const TimelineCard: FC<{ item: TimelineItem; index: number }> = ({ item, index }) => {
   const isEven = index % 2 === 0;
 
   return (
@@ -108,7 +109,7 @@ const TimelineCard: React.FC<{ item: TimelineItem; index: number }> = ({ item, i
   );
 };
 
-export const Experience: React.FC = () => {
+export const Experience: FC = () => {
   return (
     <section id="experience" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">

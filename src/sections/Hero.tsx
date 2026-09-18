@@ -1,10 +1,11 @@
+import type { FC } from 'react';
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Typed from 'typed.js';
 import { FiGithub, FiLinkedin, FiTwitter, FiInstagram } from 'react-icons/fi';
 import profileImg from '../assets/hero.png';
 
-export const Hero: React.FC = () => {
+export const Hero: FC = () => {
   const el = useRef(null);
 
   useEffect(() => {

@@ -1,8 +1,9 @@
+import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { GlassCard } from '../components/GlassCard';
 import { FiGithub, FiExternalLink, FiGitBranch, FiStar, FiActivity } from 'react-icons/fi';
 
-export const GithubStats: React.FC = () => {
+export const GithubStats: FC = () => {
   const username = 'Umeshkumar9172'; // User's GitHub username
 
   const stats = [

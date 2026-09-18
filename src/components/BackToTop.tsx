@@ -1,8 +1,9 @@
+import type { FC } from 'react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowUp } from 'react-icons/fi';
 
-export const BackToTop: React.FC = () => {
+export const BackToTop: FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
