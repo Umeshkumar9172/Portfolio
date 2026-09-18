@@ -1,8 +1,14 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { GlassCard } from '../components/GlassCard';
 
-const experienceData = [
+interface TimelineItem {
+  role: string;
+  company: string;
+  duration: string;
+  description: string;
+}
+
+const experienceData: TimelineItem[] = [
   {
     role: 'AWS Gen AI VIRTUAL INTERNSHIP',
     company: 'Eduskills',
@@ -23,7 +29,7 @@ const experienceData = [
   },
 ];
 
-const educationData = [
+const educationData: TimelineItem[] = [
   {
     role: 'B.Tech in Computer Science',
     company: 'Galgotias University',
@@ -32,7 +38,7 @@ const educationData = [
   },
 ];
 
-const TimelineCard: React.FC<{ item: any; index: number }> = ({ item, index }) => {
+const TimelineCard: React.FC<{ item: TimelineItem; index: number }> = ({ item, index }) => {
   const isEven = index % 2 === 0;
 
   return (

@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { GlassCard } from '../components/GlassCard';
 import { FiGithub, FiExternalLink, FiGitBranch, FiStar, FiActivity } from 'react-icons/fi';

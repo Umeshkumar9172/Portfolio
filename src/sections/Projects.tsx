@@ -1,9 +1,17 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { GlassCard } from '../components/GlassCard';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
 
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  tech: string[];
+  github: string;
+  live: string;
+}
+
+const projects: Project[] = [
   {
     title: 'StyleAI',
     description: 'Smart AI styling tool that provides personalized outfit and color recommendations based on your facial features and skin tone.',
@@ -38,7 +46,7 @@ const projects = [
   },
 ];
 
-const ProjectCard: React.FC<{ project: any; index: number }> = ({ project, index }) => {
+const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
